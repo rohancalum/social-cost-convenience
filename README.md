@@ -1,5 +1,6 @@
 # The social cost of commuting convenience: how cities must invest in accessible, public transit-oriented futures to avoid climate catastrophe
 
+[Working draft](https://docs.google.com/document/d/1_nJqh6TF2JJMlkGKWOM8bLRve1uU-IV5rhWL7rGA0qU/edit?usp=sharing).
 
 1. Basically [this](https://mapmyemissions.com/resources), but on an aggregate city-scale, where you route people to essential services AND their jobs. 
 Come up with a rule for people to choose driving over transit (i.e. if transit time is 50% longer than driving to work, then default the person to driving. Perhaps assign some probability that the person is environmentally conscious and would be willing to transit even if it's 50% longer). 
