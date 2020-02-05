@@ -2,7 +2,7 @@ import requests
 import pandas as pd
 import os
 import numpy as np
-from process import get_city_names 
+from process import get_city_names
 my_path = os.path.abspath(os.path.dirname(__file__))
 
 def read_processed_data(city_name: str, year: int):
@@ -51,7 +51,7 @@ def main(default: bool, year: int, time = '8:00am', date = '03-5-2019',
         i = 0
         j = None 
         
-    city_names = get_city_names()
+    city_names = ()
     for city in city_names[i:j]:
         df = read_processed_data(city[:-4], year = year)
         print(df['coord'])

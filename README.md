@@ -2,6 +2,13 @@
 
 [Working draft](https://docs.google.com/document/d/1_nJqh6TF2JJMlkGKWOM8bLRve1uU-IV5rhWL7rGA0qU/edit?usp=sharing).
 
+## Setup 
+
+1. Install environment `conda env create -f docs/environment.yml`
+2. 
+
+
+
 ## Methodology for paper: 
 
 1. Basically [this](https://mapmyemissions.com/resources), but on an aggregate city-scale, where you route people to essential services AND their jobs. 
