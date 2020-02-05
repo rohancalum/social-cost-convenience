@@ -14,3 +14,16 @@ Come up with a rule for people to choose driving over transit (i.e. if transit t
 5. Discuss the ["frequency is freedom"](https://pedestrianobservations.com/2018/04/12/buses-in-brooklyn-frequency-is-freedom-but-15-minutes-isnt-frequency/) rule... There is also literature on how frequency isn't enough, it matters where that frequency is going (i.e. should be relevant to the residents of that area). 
 
 6. Do this for a variety of cities that have notoriety for good transit, bad transit, big cities, small towns, etc.
+
+## For routing script: 
+
+
+1. `python download.py` will download the RAC All file from the [Urban Institute](https://datacatalog.urban.org/dataset/longitudinal-employer-household-dynamics-origin-destination-employment-statistics-lodes) to `/data/raw`.    
+2.  `python process.py` contains functions for reading the LODES RAC file, calling the [US Census API](https://cenpy-devs.github.io/cenpy/api.html) for a given city 
+   (default at the moment is Seattle, WA) and saves a merged dataframe with the centroids and RAC data for that city to 
+    `/data/processed`. 
+    
+Ensure you have a MyOpenTripPlanner server running on `http://localhost:8080` (i.e. by running `java -Xmx2G -jar otp-[VERSION]-shaded.jar --build <YOUR OTP DIRECTORY> --inMemory` in terminal). See [tutorial](http://docs.opentripplanner.org/en/latest/Basic-Tutorial/) for more details.
+
+3.  `python router.py` will read the processed data for a given city, perform routing and save a matrix of travel times to
+    `/data/processed`.
