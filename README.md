@@ -4,10 +4,12 @@
 
 ## Setup 
 
-1. Install environment `conda env create -f docs/environment.yml`
-2. 
-
-
+* Ensure you have the latest environment from the [git repository](https://github.com/rohancalum/social-cost-convenience/tree/master/docs). Install with `conda env create -f docs/environment.yml`
+* Ensure you have latest version of [OpenTripPlanner directory](https://drive.google.com/drive/folders/1dpiakMyGko6VMJlpvm_1ocqv_2PX69bZ?usp=sharing) locally. 
+* In a new terminal, navigate to the OpenTripPlanner directory. 
+* Launch OTP server: `java -Xmx2G -jar otp-1.3.0-shaded.jar --build . --inMemory`
+* Activate environment `conda activate geoPython3`
+* Restart Jupyter kernel if need be. 
 
 ## Methodology for paper: 
 
@@ -23,6 +25,9 @@ Come up with a rule for people to choose driving over transit (i.e. if transit t
 5. Discuss the ["frequency is freedom"](https://pedestrianobservations.com/2018/04/12/buses-in-brooklyn-frequency-is-freedom-but-15-minutes-isnt-frequency/) rule... There is also literature on how frequency isn't enough, it matters where that frequency is going (i.e. should be relevant to the residents of that area). 
 
 6. Do this for a variety of cities that have notoriety for good transit, bad transit, big cities, small towns, etc.
+
+7. Create a reusable python package for any user to calculate accessibility as a function of 'X' geospatial data.
+
 
 ## For routing script: 
 
