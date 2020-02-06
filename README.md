@@ -1,6 +1,6 @@
 # The social cost of commuting convenience: how cities must invest in accessible, public transit-oriented futures to avoid climate catastrophe
 
-[Working draft](https://docs.google.com/document/d/1_nJqh6TF2JJMlkGKWOM8bLRve1uU-IV5rhWL7rGA0qU/edit?usp=sharing).
+[Working draft of paper](https://docs.google.com/document/d/1_nJqh6TF2JJMlkGKWOM8bLRve1uU-IV5rhWL7rGA0qU/edit?usp=sharing).
 
 ## Setup 
 
