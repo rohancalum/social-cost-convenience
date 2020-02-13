@@ -11,6 +11,12 @@
 * Activate environment `conda activate geoPython3`
 * Restart Jupyter kernel if need be. 
 
+## TO-DO 
+
+* Ensure OTP server is running reliably and as expected. 
+* Do the methodology ;)
+
+
 ## Methodology for paper: 
 
 1. Basically [this](https://mapmyemissions.com/resources), but on an aggregate city-scale, where you route people to essential services AND their jobs. 
