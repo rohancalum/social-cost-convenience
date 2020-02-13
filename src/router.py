@@ -47,8 +47,8 @@ def main(default: bool, year: int, time = '8:00am', date = '03-5-2019',
     
     if default:
         # This corresponds to Seattle
-        i = -3
-        j = -2
+            i = -3
+            j = -2
     else:
         # All cities
         i = 0
@@ -57,7 +57,7 @@ def main(default: bool, year: int, time = '8:00am', date = '03-5-2019',
     city_names = get_city_names()
     for city in city_names[i:j]:
         df = read_processed_data(city[:-4], year = year)
-        print(df['coord'])
+        print('Coordinate: ', df['coord'])
         m = route(df = df, time = time, date = date,
               mode = mode, arriveBy = arriveBy)
         np.savetxt('../data/processed/'+"{}_{}_traveltime_matrix.csv".format(city[:-4], year), m, 

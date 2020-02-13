@@ -6,6 +6,7 @@ from mpl_toolkits.axes_grid1 import make_axes_locatable
 import os.path
 import pickle
 from urllib.error import HTTPError
+from shapely.geometry import Point
 my_path = os.path.abspath(os.path.dirname(__file__))
 
 
@@ -94,16 +95,23 @@ def plot_centroids(geodata: pd.DataFrame, city_name: str) -> gpd.GeoDataFrame:
     
     '''    
     #TODO: Fix this.
-    
-#    tracts = gpd.GeoDataFrame(geometry = geodata['geometry'].copy())
-#    centroids =  gpd.points_from_xy(geodata['lon'].apply(float), geodata['lat'].apply(float))
-#    geo_df = gpd.GeoDataFrame(geodata, geometry = centroids)
-#    geo_df.crs = ({'init': 'epsg:4326'})
-#    tracts.crs = ({'init': 'epsg:4326'})
-#    fig, ax = plt.subplots(figsize = (10,10))
-#    tracts.plot(ax = ax, color='white', edgecolor='black')
-#    geo_df.plot(ax = ax, color = 'r')
-#    ax.set_title(city_name)
+
+    tracts = gpd.GeoDataFrame(geometry=geodata['geometry'].copy())
+    centroids = [Point(x, y) for x, y in zip(df['lat'].apply(float), df['lon'].apply(float))]
+    geo_df = gpd.GeoDataFrame(gd[:-2],
+                              geometry=centroids)  # funkiness here, not sure why len(centroids) is 105, but gd is len 107
+
+    # This should convert things to the right scale...
+    geo_df.crs = ({'init': 'epsg:3857'})
+    geo_df = geo_df.to_crs({'init': 'epsg:3857'})
+
+    tracts.crs = ({'init': 'epsg:3857'})
+    tracts = tracts.to_crs({'init': 'epsg:3857'})
+
+    fig, ax = plt.subplots(figsize=(10, 10))
+    # tracts.plot(ax = ax, color='white', edgecolor='black') # Uncomment this to see why it breaks
+    geo_df.plot(ax=ax, color='r')
+    ax.set_title(city_name)
     print("This is broken")
     return 0
 
